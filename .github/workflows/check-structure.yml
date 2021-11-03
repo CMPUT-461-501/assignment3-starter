@@ -24,8 +24,8 @@ jobs:
       - name: Check output files
         run: |
           test -f output/results_dev_unsmoothed.csv
-          [[ $(wc -l < results_dev_unsmoothed.csv) -eq 56 ]]
+          [[ $(wc -l < output/results_dev_unsmoothed.csv) -eq 56 ]]
           test -f output/results_dev_laplace.csv
-          [[ $(wc -l < results_dev_laplace.csv) -eq 56 ]]
+          [[ $(wc -l < output/results_dev_laplace.csv) -eq 56 ]]
           test -f output/results_dev_interpolation.csv
-          [[ $(wc -l < results_dev_interpolation.csv) -eq 56 ]]
+          [[ $(wc -l < output/results_dev_interpolation.csv) -eq 56 ]]
