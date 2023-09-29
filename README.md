@@ -20,7 +20,7 @@ Example usage: use the following command in the current directory.
 `python3 src/main.py bigram --laplace`
 
 ## Data
-[ ] Training and test sets have been provided in the [data](data) directory.
+- [ ] Training and test sets have been provided in the [data](data) directory.
 
 ## Evaluation
 
