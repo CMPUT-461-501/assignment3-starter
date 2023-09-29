@@ -9,23 +9,23 @@ jobs:
         run: cd $GITHUB_WORKSPACE
       - name: Check README
         run: test -f README.md 
+      - name: Check data files
+        run: |
+          test -f data/training.txt
+          test -f data/dev.txt
       - name: Install dependencies
         run: |
           if test -f "requirements.txt"; then
               pip install --user -r requirements.txt
+          elif test -f "src/requirements.txt"; then
+              pip install --user -r src/requirements.txt 
           else 
               pip install nltk pandas regex
           fi
       - name: Run
         run: |
-          python3 src/main.py data/train/ data/dev/ output/results_dev_unsmoothed.csv --unsmoothed
-          python3 src/main.py data/train/ data/dev/ output/results_dev_laplace.csv --laplace
-          python3 src/main.py data/train/ data/dev/ output/results_dev_interpolation.csv --interpolation
-      - name: Check output files
-        run: |
-          test -f output/results_dev_unsmoothed.csv
-          [[ $(wc -l < output/results_dev_unsmoothed.csv) -eq 56 ]]
-          test -f output/results_dev_laplace.csv
-          [[ $(wc -l < output/results_dev_laplace.csv) -eq 56 ]]
-          test -f output/results_dev_interpolation.csv
-          [[ $(wc -l < output/results_dev_interpolation.csv) -eq 56 ]]
+          python3 src/main.py unigram
+          python3 src/main.py bigram
+          python3 src/main.py bigram --laplace
+          python3 src/main.py trigram
+          python3 src/main.py trigram --laplace

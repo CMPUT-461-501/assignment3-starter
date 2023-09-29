@@ -16,8 +16,7 @@ In this file you **must**:
 ## Execution
 Example usage: use the following command in the current directory.
 
-`python3 src/main.py data/train/ data/dev/ output/results_dev_laplace.csv --laplace`
+`python3 src/main.py bigram --laplace`
 
 ## Data
-
-The assignment's training data can be found in [data/train](data/train) and the development data can be found in [data/dev](data/dev).
+- [ ] Training and test sets have been provided in the [data](data) directory.
