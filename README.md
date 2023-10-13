@@ -17,7 +17,7 @@ In this file you **must**:
 ## Execution
 Example usage: use the following command in the current directory.
 
-`python3 src/main.py bigram --laplace`
+`python3 src/main.py bigram data/training.txt data/dev.txt --laplace`
 
 ## Data
 - [ ] We have provided the training and dev sets in the [data](data) directory.
