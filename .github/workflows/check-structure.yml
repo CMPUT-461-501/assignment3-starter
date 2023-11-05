@@ -24,8 +24,8 @@ jobs:
           fi
       - name: Run
         run: |
-          python3 src/main.py unigram
-          python3 src/main.py bigram
-          python3 src/main.py bigram --laplace
-          python3 src/main.py trigram
-          python3 src/main.py trigram --laplace
+          python3 src/main.py unigram data/training.txt data/dev.txt
+          python3 src/main.py bigram data/training.txt data/dev.txt
+          python3 src/main.py bigram data/training.txt data/dev.txt --laplace
+          python3 src/main.py trigram data/training.txt data/dev.txt
+          python3 src/main.py trigram data/training.txt data/dev.txt --laplace
